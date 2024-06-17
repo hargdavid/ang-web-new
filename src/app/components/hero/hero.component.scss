@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 40%;
+  /*  padding-bottom: 120%; */
+  overflow: hidden;
+  margin-top: 93px;
+  /*  margin-top: 96px; */
+}
+
+.content {
+  padding: 0 64px;
+}
+
+.image {
+  position: absolute;
+  width: calc(100% - 64px);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.circle {
+  background-color: var(--primary);
+  width: 100px;
+  height: 100px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-right: 0;
+  border-radius: 100%;
+  transform: translateX(45%);
+  transform: translateY(48%);
+}
+
+.circle-top {
+  left: 0;
+  top: 0;
+}
+
+.circle-bottom {
+  right: 0;
+  bottom: 0;
+}

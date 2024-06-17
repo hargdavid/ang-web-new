@@ -1,1 +1,10 @@
-<p>home works!</p>
+@if(content() !== null){
+<app-hero
+  [title]="content()?.hero?.title!"
+  [subtitle]="content()?.hero?.subtitle!"
+  [heroImage]="content()?.hero?.heroImage!"
+  [button]="content()?.hero?.button!"
+  [video]="content()?.hero?.video!"
+  [mobileImage]="content()?.hero?.mobileImage!"
+></app-hero>
+}
