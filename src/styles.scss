@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary: #00001c;
+  --secondary: #bbe2ff;
+  --oceanBlue: #366bff;
+  --skyBlue: #83c7ff;
+  --third: #deea34;
+  --fourth: #2a7137;
+  --disabled: #808080;
+  --gradient1: #bcbaff;
+  --gradient2: #5c40ff;
+  --gradient3: #000000;
+  --gradient: linear-gradient(
+    90deg,
+    rgba(188, 186, 255, 1) 0%,
+    rgba(92, 64, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+@font-face {
+  font-family: "Neue-Light";
+  src: url("assets/fonts/NeueHaasGrotDisp-45Light.otf") format("opentype");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue-LightItalic";
+  src: url("assets/fonts/NeueHaasGrotDisp-46LightItalic.otf") format("opentype");
+  font-weight: lighter;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Neue-Roman";
+  src: url("assets/fonts/NeueHaasGrotDisp-55Roman.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue-RomanItalic";
+  src: url("assets/fonts/NeueHaasGrotDisp-56RomanItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue-Medium";
+  src: url("assets/fonts/NeueHaasGrotDisp-65Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue-MediumItalic";
+  src: url("assets/fonts/NeueHaasGrotDisp-66MediumItalic.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Neue-Bold";
+  src: url("assets/fonts/NeueHaasGrotDisp-75Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue-BoldItalic";
+  src: url("assets/fonts/NeueHaasGrotDisp-76BoldItalic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@layer base {
+  * {
+    margin: 0;
+  }
+
+  body {
+    font-family: "Neue-Light";
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  h1,
+  h2,
+  p {
+    font-family: "Neue-Light";
+  }
+
+  .bold {
+    font-family: "Neue-Bold";
+  }
+  .italic {
+    font-family: "Neue-LightItalic";
+  }
+
+  a {
+    color: var(--secondary);
+  }
+}
