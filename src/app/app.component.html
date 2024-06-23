@@ -1,1 +1,9 @@
-<router-outlet />
+<main>
+  <app-navigation
+    [logo]="contentService.meta()?.logo"
+    [navigation]="contentService.navigation()"
+    [isMobile]="globalService.isMobile()"
+  ></app-navigation>
+  <router-outlet />
+  <app-footer [links]="contentService.navigation()"></app-footer>
+</main>

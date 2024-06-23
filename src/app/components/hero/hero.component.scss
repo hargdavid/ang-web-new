@@ -1,15 +1,21 @@
+@import "../../shared/styles/breakpoints.scss";
+
 .container {
   width: 100%;
   position: relative;
-  padding-bottom: 40%;
-  /*  padding-bottom: 120%; */
+  padding-bottom: 120%;
   overflow: hidden;
   margin-top: 93px;
-  /*  margin-top: 96px; */
+
+  @include md {
+    padding-bottom: 40%;
+    margin-top: 96px;
+  }
 }
 
 .content {
-  padding: 0 64px;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .image {
@@ -17,28 +23,83 @@
   width: calc(100% - 64px);
   height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: 50%;
+  background-color: var(--skyBlue);
 }
 
 .circle {
   background-color: var(--primary);
   width: 100px;
   height: 100px;
-  width: 100px;
-  height: 100px;
   position: absolute;
   border-right: 0;
   border-radius: 100%;
-  transform: translateX(45%);
-  transform: translateY(48%);
+
+  @include md {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .circle-top {
   left: 0;
   top: 0;
+  transform: translate(-45%, -48%);
 }
 
 .circle-bottom {
   right: 0;
   bottom: 0;
+  transform: translate(45%, 48%);
+}
+
+.shadow {
+  width: 100%;
+  object-fit: contain;
+  background-color: var(--black);
+  opacity: 0.1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.cms-content {
+  display: flex;
+  position: relative;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 100%;
+  flex-flow: column;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.text-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: baseline;
+  flex-flow: column;
+  padding: 0 32px;
+}
+
+.subtitle {
+  font-size: 24px;
+  text-align: left;
+  color: var(--secondary);
+  text-shadow: 0 0 17px var(--black);
+}
+
+.title {
+  color: var(--white);
+  width: 83.333333%;
+  margin-bottom: 1.75rem;
+  font-size: 2.5rem;
+  text-shadow: 0 0 17px var(--black);
+
+  @include md {
+    font-size: 3rem;
+  }
 }

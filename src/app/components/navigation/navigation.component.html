@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="container">
+    <a routerLink="/" aria-label="a north group - hem">
+      <img [src]="logo?.url" [alt]="logo?.alt" width="150" />
+    </a>
+    @if(isMobile){
+    <button (click)="onOpen()" class="hamburger-menu" name="menu">
+      <!--  <Bars3Icon /> -->
+      Meny
+    </button>
+
+    @if(isOpen()){
+
+    <div class="mobile-menu" [class]="animationClass">
+      <div class="close-button">
+        <button (click)="onClose()" name="close">stäng</button>
+      </div>
+
+      <nav class="mobile-nav">
+        @for(link of navigation; track link){
+        <a class="link" [href]="link.path">{{ link.name }}</a>
+        }
+      </nav>
+    </div>
+
+    } }@else{
+    <nav class="desktop-nav">
+      @for(link of navigation; track link){
+      <a class="link" [href]="link.path">{{ link.name }}</a>
+      }
+    </nav>
+    }
+  </div>
+</header>

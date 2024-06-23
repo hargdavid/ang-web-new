@@ -1,0 +1,76 @@
+@import "../../shared/styles/breakpoints.scss";
+
+.footer {
+  width: auto;
+  padding: 32px;
+  background-color: var(--skyBlue);
+  color: var(--primary);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 80rem;
+  margin: 0 auto;
+  flex-flow: column;
+
+  @include xl {
+    padding: 0 32px;
+  }
+}
+
+.upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  flex-flow: column;
+  align-items: start;
+  gap: 16px;
+  width: max-content;
+
+  .link {
+    color: var(--primary);
+    text-decoration: none;
+    gap: 8px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @include md {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+
+  svg {
+    fill: var(--primary);
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .icon {
+    width: 60px;
+  }
+
+  p {
+    font-family: "Neue-Light";
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}

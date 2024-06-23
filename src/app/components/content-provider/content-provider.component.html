@@ -1,1 +1,20 @@
-<p>content-provider works!</p>
+@for(block of contentBlocks; track block){ @if(block.type === "content"){
+@for(content of block.content; track content){ @switch(content.type){
+@case(TextTypes.H1){
+<h1>{{ content.text }}</h1>
+} @case(TextTypes.H2){
+<h2>{{ content.text }}</h2>
+} @case(TextTypes.H3){
+<h3>{{ content.text }}</h3>
+
+} @case(TextTypes.Text){ @if(content.link){
+<a [href]="content.link">{{ content.text }}</a>
+}@else{
+<p>{{ content.text }}</p>
+}
+<p>{{ content.text }}</p>
+} @case(TextTypes.Quote){
+<q>{{ content.text }}</q>
+} @case(TextTypes.Bullet){
+<li>{{ content.text }}</li>
+} @default { } } } } }

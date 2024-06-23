@@ -1,31 +1,24 @@
 <section class="container">
   <div class="content">
-    <div class="image" style="">
+    <div class="image" [style.background-image]="'url(' + url() + ')'">
       <div class="circle circle-top"></div>
       <div class="circle circle-bottom"></div>
       <!-- {video && <Video video={video} />} -->
-      <div
-        class="w-full object-fit bg-black bg-opacity-10 h-full absolute top-0"
-      ></div>
+      <div class="shadow"></div>
 
-      <div
-        class="top-[60%] relative translate-y-[-50%] w-fullflex flex-col gap-2 items-baseline"
-      >
-        <div
-          class="relative w-full max-w-7xl m-auto flex items-baseline flex-col px-4"
-        >
+      <div class="cms-content">
+        <div class="text-container">
           @if(subtitle){
-          <h2
-            class="text-2xl text-left text-secondary shadow-black text-shadow-sm"
-          >
+          <h2 class="subtitle">
             {{ subtitle }}
           </h2>
           }
 
-          <h1 class="text-white w-[83.333%] mb-7">{{ title }}</h1>
-          <!-- {button && (
-          <LinkButton title="{button.title}" href="{button.link}" />
-          )} -->
+          <h1 class="title">{{ title }}</h1>
+          <!-- LINKBUTTON -->
+          @if(button){
+          <a [href]="button.link">{{ button.title }}</a>
+          }
         </div>
       </div>
     </div>
