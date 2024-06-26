@@ -1,12 +1,3 @@
 @if(content() !== null){
-<app-hero
-  [title]="content()?.hero?.title!"
-  [subtitle]="content()?.hero?.subtitle!"
-  [heroImage]="content()?.hero?.heroImage!"
-  [button]="content()?.hero?.button!"
-  [video]="content()?.hero?.video!"
-  [mobileImage]="content()?.hero?.mobileImage!"
-></app-hero>
-
-<app-content-provider [contentBlocks]="content?.content"></app-content-provider>
+<app-content-provider [content]="content()"></app-content-provider>
 }

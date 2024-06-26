@@ -1,1 +1,3 @@
-<p>content works!</p>
+@if(content() !== null){
+<app-content-provider [content]="content()"></app-content-provider>
+}

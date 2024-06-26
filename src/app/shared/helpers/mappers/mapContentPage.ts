@@ -28,7 +28,13 @@ import {
 import { LinkButton, LinkButtonDto } from '../../types/content/linkButton';
 import { mapImageBlock, mapVideoBlock } from './mapImageBlock';
 
-export const mapContentPage = (contentPageDTO: ContentPageDTO): ContentPage => {
+export const mapContentPage = (
+  contentPageDTO: ContentPageDTO
+): ContentPage | null => {
+  if (!contentPageDTO) {
+    return null;
+  }
+
   return {
     content: contentPageDTO.contentList?.blockArray
       ? mapContentList(contentPageDTO.contentList.blockArray)

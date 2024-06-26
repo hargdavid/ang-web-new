@@ -18,7 +18,9 @@
 
       <nav class="mobile-nav">
         @for(link of navigation; track link){
-        <a class="link" [href]="link.path">{{ link.name }}</a>
+        <a class="link" [routerLink]="link.path" (click)="onClose()">{{
+          link.name
+        }}</a>
         }
       </nav>
     </div>
@@ -26,7 +28,7 @@
     } }@else{
     <nav class="desktop-nav">
       @for(link of navigation; track link){
-      <a class="link" [href]="link.path">{{ link.name }}</a>
+      <a class="link" [routerLink]="link.path">{{ link.name }}</a>
       }
     </nav>
     }

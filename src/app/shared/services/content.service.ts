@@ -1,14 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, WritableSignal, inject, signal } from '@angular/core';
 import { environment } from '../../../environments/environments';
-import {
-  MetaData,
-  NavigationDto,
-  NavigationItem,
-} from '../types/content/navigation';
+import { MetaData, NavigationItem } from '../types/content/navigation';
 import { mapMetaData } from '../helpers/mappers/mapMetaData';
-import { ContentPage, ContentPageDTO } from '../types/content/contentPage';
-import { mapContentPage } from '../helpers/mappers/mapContentPage';
 import { mapNavigation } from '../helpers/mappers/mapNavigation';
 
 @Injectable({
@@ -36,39 +30,15 @@ export class ContentService {
 
   getStartPage() {
     const query = encodeURIComponent("*[_type == 'startPage']");
-    let startPage: ContentPage | null = null;
 
-    this.httpClient.get<any>(`${this.baseUrl}${query}`).subscribe({
-      next: (response) => {
-        const startPageDTO: ContentPageDTO = response.result[0];
-
-        startPage = mapContentPage(startPageDTO);
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
-
-    return startPage;
+    return this.httpClient.get<any>(`${this.baseUrl}${query}`);
   }
 
   getContentPage(pathname: string) {
-    const query = encodeURIComponent(
+    const query = decodeURIComponent(
       `*[_type == 'contentPage'][path == '${pathname}']`
     );
-    let contentPage: ContentPage | null = null;
 
-    this.httpClient.get<any>(`${this.baseUrl}${query}`).subscribe({
-      next: (response) => {
-        const contentDTO = response.data.result[0] as ContentPageDTO;
-
-        contentPage = mapContentPage(contentDTO);
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
-
-    return contentPage;
+    return this.httpClient.get<any>(`${this.baseUrl}${query}`);
   }
 }

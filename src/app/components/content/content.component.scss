@@ -1,0 +1,25 @@
+@import "../../shared/styles/breakpoints.scss";
+
+h2 {
+  font-size: 2.5rem;
+
+  @include md {
+    font-size: 3rem;
+  }
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  padding: 0 32px;
+
+  @include md {
+    padding: 0;
+  }
+}

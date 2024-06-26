@@ -33,6 +33,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 56px;
+
+  .link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .mobile-menu {
@@ -41,11 +49,10 @@
   padding: 24px;
   width: 100%;
   height: 100vh;
-  animation-duration: 200ms;
   z-index: 100;
   background-color: var(--skyBlue);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all;
+  transition: all 200ms ease-in-out;
 
   .close-button {
     display: flex;
