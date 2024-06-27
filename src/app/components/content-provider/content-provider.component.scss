@@ -10,3 +10,9 @@
     padding: 3.5rem 32px;
   }
 }
+
+.content {
+  display: flex;
+  gap: 16px;
+  flex-flow: column;
+}

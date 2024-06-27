@@ -1,0 +1,89 @@
+@import "../../shared/styles/breakpoints.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 100px 32px;
+  overflow: hidden;
+
+  @include md {
+    padding: 100px 0;
+  }
+
+  img {
+    width: 100%;
+    height: 400px;
+
+    @include md {
+      height: auto;
+    }
+  }
+
+  .image-content {
+    position: relative;
+  }
+
+  .circle-top {
+    background-color: var(--primary);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 100%;
+    transform: translate(-45%, -48%);
+
+    @include md {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  .circle-bottom {
+    background-color: var(--primary);
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    transform: translate(45%, 48%);
+
+    @include md {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  .upper-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 4.5rem;
+    line-height: 1;
+    transform: translateY(-60%);
+    padding: 0;
+
+    @include md {
+      left: -10%;
+    }
+  }
+
+  .bottom-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 3.5rem;
+    line-height: 1;
+    transform: translateY(50%);
+    padding: 0;
+
+    @include md {
+      left: -10%;
+      font-size: 4.5rem;
+      line-height: 1;
+    }
+  }
+}

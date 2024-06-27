@@ -1,1 +1,18 @@
-<p>text-and-image works!</p>
+<div class="container">
+  <div class="image-content">
+    <img
+      [src]="imageWithText.image.url"
+      [alt]="imageWithText.image.alt"
+      height="500"
+      width="500"
+    />
+    <div class="circle-top"></div>
+    <div class="circle-bottom"></div>
+    <p class="upper-text">
+      {{ imageWithText.text }}
+    </p>
+    <p class="bottom-text">
+      {{ imageWithText.text2 }}
+    </p>
+  </div>
+</div>

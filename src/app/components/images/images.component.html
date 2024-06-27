@@ -1,0 +1,7 @@
+<ul class="image-list">
+  @for(image of images; track image){
+  <li class="list-item">
+    <img [src]="image.url" [alt]="image.alt" />
+  </li>
+  }
+</ul>

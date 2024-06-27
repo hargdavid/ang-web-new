@@ -1,0 +1,48 @@
+@import "../../shared/styles/breakpoints.scss";
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 24px;
+  height: auto;
+  padding: 40px 0;
+  width: 100%;
+
+  @include md {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+.list-el {
+  padding: 32px 48px;
+  display: flex;
+  gap: 24;
+  flex-flow: column;
+  background-color: var(--skyBlue);
+  color: var(--primary);
+
+  @include md {
+    padding-top: 24px;
+    border-radius: 10px;
+    gap: 16px;
+  }
+
+  h3 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+  }
+
+  p {
+    text-align: center;
+
+    @include md {
+      text-align: left;
+    }
+  }
+}

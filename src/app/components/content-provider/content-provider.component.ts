@@ -4,6 +4,7 @@ import { HeroComponent } from '../hero/hero.component';
 import { ContentComponent } from '../content/content.component';
 import { TextAndImageComponent } from '../text-and-image/text-and-image.component';
 import { BlocksComponent } from '../blocks/blocks.component';
+import { ImagesComponent } from '../images/images.component';
 
 @Component({
   selector: 'app-content-provider',
@@ -13,6 +14,7 @@ import { BlocksComponent } from '../blocks/blocks.component';
     ContentComponent,
     TextAndImageComponent,
     BlocksComponent,
+    ImagesComponent,
   ],
   templateUrl: './content-provider.component.html',
   styleUrl: './content-provider.component.scss',

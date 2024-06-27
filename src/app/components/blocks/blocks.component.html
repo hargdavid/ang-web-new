@@ -1,1 +1,8 @@
-<p>blocks works!</p>
+<ul class="list">
+  @for(block of blocks; track block){
+  <li class="list-el">
+    <h3>{{ block.title }}</h3>
+    <p>{{ block.description }}</p>
+  </li>
+  }
+</ul>

@@ -13,17 +13,22 @@
   @for(block of content.content; track block){ @switch (block.type) {
   <!-- Content -->
   @case("content"){
-  <app-content [content]="block.content"></app-content>
+  <app-content [content]="block.content" class="content"></app-content>
   }
 
   <!-- TextAndImage -->
   @case("textAndImage"){
-  <app-text-and-image></app-text-and-image>
+  <app-text-and-image [imageWithText]="block.content"></app-text-and-image>
+  }
+
+  <!-- images -->
+  @case("images"){
+  <app-images [images]="block.content"></app-images>
   }
 
   <!-- >Blocks -->
   @case("blocks"){
-  <app-blocks></app-blocks>
+  <app-blocks [blocks]="block.content"></app-blocks>
   } } }
 </section>
 } }
